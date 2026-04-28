@@ -1,16 +1,25 @@
-<!DOCTYPE html>
+from pathlib import Path
+import zipfile, textwrap, os, re
+
+out_dir = Path("/mnt/data/taeseong_yoon_professional_site")
+out_dir.mkdir(exist_ok=True)
+
+index_html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taesung Yoon</title>
-  <meta name="description" content="Taesung Yoon — Ph.D. Candidate at KAIST. Research in uncertainty quantification, evidential deep learning, Bayesian deep learning, and time-series anomaly detection." />
+  <title>Taeseong Yoon</title>
+  <meta name="description" content="Taeseong Yoon — Ph.D. Candidate at KAIST. Research in uncertainty quantification, evidential deep learning, Bayesian deep learning, and industrial anomaly detection." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a class="brand" href="#home">Taesung Yoon</a>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="logo" href="#home">
+        <span class="logo-mark">TY</span>
+        <span>Taeseong Yoon</span>
+      </a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <div class="nav-links">
         <a href="#about">About</a>
@@ -26,198 +35,236 @@
 
   <main id="home">
     <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Ph.D. Candidate · KAIST Industrial & Systems Engineering</p>
-        <h1>Taesung Yoon</h1>
-        <p class="subtitle">
-          I study uncertainty quantification for deep learning, with a focus on evidential deep learning,
-          Bayesian deep learning, and reliable anomaly detection in industrial systems.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="mailto:your.email@kaist.ac.kr">Email</a>
-          <a class="button" href="https://github.com/YOUR_GITHUB_ID">GitHub</a>
-          <a class="button" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
-          <a class="button" href="files/cv.pdf">CV</a>
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">KAIST · Industrial Statistics Lab</p>
+          <h1>Taeseong Yoon</h1>
+          <p class="lead">
+            Ph.D. candidate in Industrial & Systems Engineering at KAIST, working on
+            uncertainty quantification, evidential deep learning, Bayesian deep learning,
+            and reliable AI for high-stakes decision-making.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:your.email@kaist.ac.kr">Email</a>
+            <a class="btn" href="https://scholar.google.com/citations?hl=ko&user=MSiVD2gAAAAJ">Google Scholar</a>
+            <a class="btn" href="https://github.com/TaeseongYoon">GitHub</a>
+            <a class="btn" href="files/cv.pdf">CV</a>
+          </div>
         </div>
+
+        <aside class="profile-panel">
+          <div class="portrait">TY</div>
+          <div>
+            <h2>Taeseong Yoon</h2>
+            <p>Ph.D. Candidate<br />Department of Industrial & Systems Engineering<br />KAIST</p>
+          </div>
+          <div class="profile-meta">
+            <div>
+              <span>Advisor</span>
+              <strong>Prof. Heeyoung Kim</strong>
+            </div>
+            <div>
+              <span>Lab</span>
+              <strong>Industrial Statistics Lab</strong>
+            </div>
+            <div>
+              <span>Research</span>
+              <strong>Uncertainty Quantification · Reliable AI</strong>
+            </div>
+          </div>
+        </aside>
       </div>
-      <aside class="profile-card">
-        <div class="photo-placeholder">TY</div>
-        <h2>Taesung Yoon</h2>
-        <p>Industrial Statistics Lab<br />KAIST</p>
-        <p class="small">
-          Advisor: Prof. Heeyoung Kim<br />
-          Ph.D. Candidate, 2022.9 – Present
-        </p>
-      </aside>
     </section>
 
-    <section id="about" class="section two-column">
-      <div>
-        <h2>About</h2>
+    <section id="about" class="section intro-grid">
+      <div class="about-card">
+        <p class="section-kicker">About</p>
+        <h2>Researching reliable deep learning under uncertainty.</h2>
         <p>
-          I am a Ph.D. candidate in the Department of Industrial and Systems Engineering at KAIST,
-          advised by Professor Heeyoung Kim in the Industrial Statistics Lab. My research aims to
-          develop uncertainty-aware deep learning methods that remain reliable under distribution
-          shift, class imbalance, noisy labels, and industrial anomaly detection scenarios.
+          I am a Ph.D. candidate at KAIST advised by Professor Heeyoung Kim. My research focuses on
+          uncertainty-aware deep learning methods that remain reliable under distribution shift,
+          class imbalance, noisy labels, and industrial anomaly detection scenarios.
         </p>
         <p>
-          My recent work focuses on flexible evidential learning frameworks, interpretable
-          uncertainty-aware classification, and graph-based probabilistic models for multivariate
-          time-series anomaly detection.
+          My recent work develops flexible evidential learning frameworks and interpretable
+          uncertainty-aware classification models, with applications to robust classification and
+          multivariate time-series anomaly detection.
         </p>
       </div>
-      <div class="news-card">
-        <div class="section-title-row">
+
+      <div class="news-panel">
+        <div class="panel-header">
+          <p class="section-kicker">Updates</p>
           <h2>News</h2>
         </div>
         <ul class="news-list">
-          <li><span>Dec 2025</span> Presented “Uncertainty Estimation by Flexible Evidential Deep Learning” at NeurIPS 2025.</li>
-          <li><span>Oct 2025</span> Gave an invited-session talk at the INFORMS Annual Meeting.</li>
-          <li><span>Jul 2025</span> Gave an invited seminar on uncertainty quantification methods for deep learning at Posco Labs.</li>
-          <li><span>Jul 2024</span> Presented “Uncertainty Estimation by Density Aware Evidential Deep Learning” at ICML 2024.</li>
-          <li><span>Oct 2024</span> Received Best Poster Award, 3rd Prize, at Samsung AI Forum 2024.</li>
+          <li><time>Dec 2025</time><span>Presented F-EDL at NeurIPS 2025.</span></li>
+          <li><time>Oct 2025</time><span>Presented F-EDL in an invited session at INFORMS Annual Meeting.</span></li>
+          <li><time>Jul 2025</time><span>Gave an invited seminar on uncertainty quantification methods for deep learning at Posco Labs.</span></li>
+          <li><time>Jul 2024</time><span>Presented DAEDL at ICML 2024.</span></li>
+          <li><time>Oct 2024</time><span>Received Best Poster Award, 3rd Prize, at Samsung AI Forum 2024.</span></li>
         </ul>
       </div>
     </section>
 
-    <section id="publications" class="section">
-      <div class="section-title-row">
+    <section id="publications" class="section publications-section">
+      <div class="section-heading">
+        <p class="section-kicker">Selected Work</p>
         <h2>Publications</h2>
-        <p class="section-note">Selected peer-reviewed publications and manuscripts.</p>
+        <p>
+          My work focuses on principled and practical uncertainty estimation for modern deep learning systems.
+        </p>
       </div>
 
-      <h3>Conference Publications</h3>
-      <div class="pub-list">
-        <article class="publication">
-          <div class="pub-badge">C2</div>
-          <div>
-            <h4>Uncertainty Estimation by Flexible Evidential Deep Learning</h4>
-            <p><strong>T. Yoon</strong> and H. Kim. <em>NeurIPS 2025</em>.</p>
-            <div class="pub-links">
-              <a href="#">Paper</a>
-              <a href="#">Code</a>
+      <div class="publication-feature">
+        <div class="venue-badge neurips">NeurIPS 2025</div>
+        <div class="pub-main">
+          <h3>Uncertainty Estimation by Flexible Evidential Deep Learning</h3>
+          <p class="authors"><strong>Taeseong Yoon</strong> and Heeyoung Kim</p>
+          <p>
+            Flexible Evidential Deep Learning extends evidential deep learning by predicting a
+            flexible Dirichlet distribution over class probabilities, improving uncertainty
+            generalization under classical, long-tailed, and noisy in-distribution settings.
+          </p>
+          <div class="link-row">
+            <a href="https://openreview.net/forum?id=N6ujq5Yfwa">OpenReview</a>
+            <a href="https://arxiv.org/abs/2510.18322">arXiv</a>
+            <a href="https://github.com/TaeseongYoon/F-EDL">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-feature">
+        <div class="venue-badge icml">ICML 2024</div>
+        <div class="pub-main">
+          <h3>Uncertainty Estimation by Density Aware Evidential Deep Learning</h3>
+          <p class="authors"><strong>Taeseong Yoon</strong> and Heeyoung Kim</p>
+          <p>
+            Density Aware Evidential Deep Learning improves evidential uncertainty estimation by
+            incorporating feature-space density information at prediction time and introducing
+            a parameterization designed to improve classification and OOD detection.
+          </p>
+          <div class="link-row">
+            <a href="https://arxiv.org/abs/2409.08754">arXiv</a>
+            <a href="https://proceedings.mlr.press/v235/yoon24a.html">PMLR</a>
+            <a href="https://github.com/TaeseongYoon/DAEDL">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-category">
+        <h3>Preprints</h3>
+        <div class="compact-pubs">
+          <article>
+            <span class="pub-index">P4</span>
+            <div>
+              <h4>LALA: Learning-Aware Logit Adjustment for Class Imbalanced Semi-Supervised Learning</h4>
+              <p>T. Park, <strong>T. Yoon</strong>, and H. Kim. To be submitted to NeurIPS 2026.</p>
             </div>
-          </div>
-        </article>
-
-        <article class="publication">
-          <div class="pub-badge">C1</div>
-          <div>
-            <h4>Uncertainty Estimation by Density Aware Evidential Deep Learning</h4>
-            <p><strong>T. Yoon</strong> and H. Kim. <em>ICML 2024</em>.</p>
-            <div class="pub-links">
-              <a href="#">Paper</a>
-              <a href="#">Code</a>
+          </article>
+          <article>
+            <span class="pub-index">P3</span>
+            <div>
+              <h4>Graph-Transformer-Enhanced Probabilistic State-Space Models for Multivariate Time Series Anomaly Detection</h4>
+              <p>W. Koo, J. Lee, <strong>T. Yoon</strong>, and H. Kim. Under review at KDD 2026.</p>
             </div>
-          </div>
-        </article>
+          </article>
+          <article>
+            <span class="pub-index">P2</span>
+            <div>
+              <h4>Courtroom Analogy: New Perspective on Uncertainty-Aware Classification</h4>
+              <p><strong>T. Yoon</strong> and H. Kim. Under review at ICML 2026.</p>
+            </div>
+          </article>
+          <article>
+            <span class="pub-index">P1</span>
+            <div>
+              <h4>Knowledge-Assisted Multi-Graph Structure Learning for Multivariate Time Series Anomaly Detection in Multi-Stage Industrial Processes</h4>
+              <p>J. Lee*, <strong>T. Yoon*</strong>, W. Koo, and H. Kim. Major revision at IEEE TASE.</p>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <h3>Preprints</h3>
-      <div class="pub-list">
-        <article class="publication">
-          <div class="pub-badge">P4</div>
-          <div>
-            <h4>LALA: Learning-Aware Logit Adjustment for Class Imbalanced Semi-Supervised Learning</h4>
-            <p>T. Park, <strong>T. Yoon</strong>, and H. Kim. To be submitted to <em>NeurIPS 2026</em>.</p>
-          </div>
-        </article>
-
-        <article class="publication">
-          <div class="pub-badge">P3</div>
-          <div>
-            <h4>Graph-Transformer-Enhanced Probabilistic State-Space Models for Multivariate Time Series Anomaly Detection</h4>
-            <p>W. Koo, J. Lee, <strong>T. Yoon</strong>, and H. Kim. Under review at <em>KDD 2026</em>.</p>
-          </div>
-        </article>
-
-        <article class="publication">
-          <div class="pub-badge">P2</div>
-          <div>
-            <h4>Courtroom Analogy: New Perspective on Uncertainty-Aware Classification</h4>
-            <p><strong>T. Yoon</strong> and H. Kim. Under review at <em>ICML 2026</em>.</p>
-          </div>
-        </article>
-
-        <article class="publication">
-          <div class="pub-badge">P1</div>
-          <div>
-            <h4>Knowledge-Assisted Multi-Graph Structure Learning for Multivariate Time Series Anomaly Detection in Multi-Stage Industrial Processes</h4>
-            <p>J. Lee*, <strong>T. Yoon*</strong>, W. Koo, and H. Kim. Major revision at <em>IEEE Transactions on Automation Science and Engineering</em>.</p>
-          </div>
-        </article>
-      </div>
-
-      <h3>Working Papers</h3>
-      <div class="tag-grid">
-        <span>DIVE: Disentangled Variational Evidential Learning</span>
-        <span>Adaptive Variable Selection for Continuous Treatment Effect Estimation</span>
+      <div class="pub-category">
+        <h3>Working Papers</h3>
+        <div class="work-grid">
+          <span>DIVE: Disentangled Variational Evidential Learning</span>
+          <span>Adaptive Variable Selection for Continuous Treatment Effect Estimation</span>
+        </div>
       </div>
     </section>
 
     <section id="research" class="section">
-      <div class="section-title-row">
+      <div class="section-heading">
+        <p class="section-kicker">Research Areas</p>
         <h2>Research Interests</h2>
       </div>
-      <div class="research-grid">
+      <div class="research-cards">
         <article>
+          <span>01</span>
           <h3>Uncertainty Quantification</h3>
-          <p>Evidential deep learning, Bayesian deep learning, reliable uncertainty estimation, and uncertainty-aware classification.</p>
+          <p>Evidential deep learning, Bayesian deep learning, uncertainty-aware classification, calibration, and single-forward-pass uncertainty estimation.</p>
         </article>
         <article>
+          <span>02</span>
           <h3>Robust Deep Learning</h3>
-          <p>OOD detection, distribution shift, class imbalance, noisy labels, and confidence calibration.</p>
+          <p>OOD detection, distribution shift, long-tailed recognition, noisy labels, and reliable confidence estimation.</p>
         </article>
         <article>
+          <span>03</span>
           <h3>Industrial AI</h3>
-          <p>Multivariate time-series anomaly detection, graph structure learning, and manufacturing process monitoring.</p>
+          <p>Multivariate time-series anomaly detection, graph structure learning, manufacturing process monitoring, and quality testing.</p>
         </article>
       </div>
     </section>
 
     <section id="talks" class="section">
-      <div class="section-title-row">
-        <h2>Talks and Presentations</h2>
+      <div class="section-heading">
+        <p class="section-kicker">Presentations</p>
+        <h2>Talks</h2>
       </div>
-
       <div class="timeline">
-        <div class="timeline-item">
-          <span>2025</span>
+        <article>
+          <time>2025</time>
           <div>
             <h3>Uncertainty Estimation by Flexible Evidential Deep Learning</h3>
-            <p>NeurIPS 2025 Poster Presentation · KIIE Annual Conference · INFORMS Annual Meeting Invited Session</p>
+            <p>NeurIPS 2025 Poster · KIIE Annual Conference · INFORMS Annual Meeting Invited Session</p>
           </div>
-        </div>
-        <div class="timeline-item">
-          <span>2024–2025</span>
+        </article>
+        <article>
+          <time>2024–2025</time>
           <div>
             <h3>Uncertainty Estimation by Density Aware Evidential Deep Learning</h3>
-            <p>ICML 2024 Poster Presentation · Samsung AI Forum 2024 Invited Poster · QIFK 2024 Finalist Session · KIIE Annual Spring Conference</p>
+            <p>ICML 2024 Poster · Samsung AI Forum Invited Poster · Qualcomm AI Fellowship Korea Finalist Session · KIIE Annual Spring Conference</p>
           </div>
-        </div>
-        <div class="timeline-item">
-          <span>2025</span>
+        </article>
+        <article>
+          <time>2025</time>
           <div>
             <h3>Uncertainty Quantification Methods for Deep Learning</h3>
             <p>Invited Seminar, Posco Labs</p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="service" class="section two-column">
-      <div>
-        <h2>Academic Service</h2>
-        <ul class="clean-list">
-          <li>Reviewer: NeurIPS 2025, NeurIPS 2026, ICML 2026</li>
-          <li>Reviewer: IISE Transactions</li>
-          <li>Reviewer: Computers & Industrial Engineering</li>
-          <li>Reviewer: Medical Image Analysis</li>
+    <section id="service" class="section split">
+      <div class="info-box">
+        <p class="section-kicker">Academic Service</p>
+        <h2>Reviewer</h2>
+        <ul>
+          <li>NeurIPS 2025, NeurIPS 2026, ICML 2026</li>
+          <li>IISE Transactions</li>
+          <li>Computers & Industrial Engineering</li>
+          <li>Medical Image Analysis</li>
         </ul>
       </div>
-      <div>
+      <div class="info-box">
+        <p class="section-kicker">Recognition</p>
         <h2>Awards</h2>
-        <ul class="clean-list">
+        <ul>
           <li>Finalist, Qualcomm Innovation Fellowship Korea 2024</li>
           <li>Best Poster Award, 3rd Prize, Samsung AI Forum 2024</li>
           <li>Dean’s List, KAIST ISE</li>
@@ -226,35 +273,43 @@
     </section>
 
     <section id="experience" class="section">
-      <div class="section-title-row">
+      <div class="section-heading">
+        <p class="section-kicker">Professional Background</p>
         <h2>Experience</h2>
       </div>
-
-      <div class="card-list">
+      <div class="experience-list">
         <article>
-          <h3>Research Intern, Samsung Advanced Institute of Technology</h3>
-          <p class="meta">Machine Learning Lab, AI Research Center · Jul 2023 – Aug 2023</p>
-          <p>Research topic: uncertainty-based anomaly detection for automated quality testing in semiconductor manufacturing.</p>
+          <div class="date">Jul 2023 – Aug 2023</div>
+          <div>
+            <h3>Research Intern, Samsung Advanced Institute of Technology</h3>
+            <p class="muted">Machine Learning Lab, AI Research Center</p>
+            <p>Uncertainty-based anomaly detection for automated quality testing in semiconductor manufacturing.</p>
+          </div>
         </article>
         <article>
-          <h3>Research Intern, Industrial Statistics Lab</h3>
-          <p class="meta">Jul 2021 – Aug 2021</p>
-          <p>Research topic: Bayesian nonparametrics and Dirichlet Process Gaussian Mixture Models.</p>
+          <div class="date">Jul 2021 – Aug 2021</div>
+          <div>
+            <h3>Research Intern, Industrial Statistics Lab</h3>
+            <p>Bayesian nonparametrics and Dirichlet Process Gaussian Mixture Models.</p>
+          </div>
         </article>
         <article>
-          <h3>Intern, SK Hynix</h3>
-          <p class="meta">Quality Assurance Team, Mobile DRAM Engineering · Jan 2021 – Feb 2021</p>
-          <p>Research topic: bank address pattern analysis using sequential pattern mining.</p>
+          <div class="date">Jan 2021 – Feb 2021</div>
+          <div>
+            <h3>Intern, SK Hynix</h3>
+            <p class="muted">Quality Assurance Team, Mobile DRAM Engineering</p>
+            <p>Bank address pattern analysis using sequential pattern mining.</p>
+          </div>
         </article>
       </div>
     </section>
 
     <section id="teaching" class="section">
-      <div class="section-title-row">
-        <h2>Teaching and Other Activities</h2>
+      <div class="section-heading">
+        <p class="section-kicker">Teaching</p>
+        <h2>Teaching and Activities</h2>
       </div>
-
-      <div class="card-list">
+      <div class="teaching-grid">
         <article>
           <h3>Teaching Assistant</h3>
           <p>Engineering Statistics 1 (IE241), KAIST · Mar 2025 – Jun 2025</p>
@@ -272,8 +327,8 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Taesung Yoon. Last updated: April 2026.</p>
+  <footer class="footer">
+    <p>© 2026 Taeseong Yoon. Built with GitHub Pages.</p>
   </footer>
 
   <script>
@@ -283,3 +338,639 @@
   </script>
 </body>
 </html>
+'''
+
+style_css = r''':root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --ink: #172033;
+  --muted: #657289;
+  --line: #dbe3ee;
+  --blue: #174a7c;
+  --blue-2: #0b3158;
+  --blue-soft: #e8f1fb;
+  --gold: #c79335;
+  --green: #1f7a65;
+  --shadow: 0 24px 70px rgba(23, 32, 51, 0.10);
+  --shadow-soft: 0 12px 34px rgba(23, 32, 51, 0.07);
+  --radius: 22px;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(23, 74, 124, 0.12), transparent 35%),
+    radial-gradient(circle at 92% 8%, rgba(199, 147, 53, 0.10), transparent 30%),
+    var(--bg);
+  line-height: 1.66;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-2);
+  text-decoration: underline;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(219, 227, 238, 0.85);
+}
+
+.nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--ink);
+  font-weight: 850;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.02em;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), #3274aa);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 0.78rem;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(23, 74, 124, 0.25);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 0.93rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.45rem;
+  cursor: pointer;
+}
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+.hero {
+  position: relative;
+  padding: 62px 0 42px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 40px 0 0 0;
+  background:
+    linear-gradient(135deg, rgba(23, 74, 124, 0.11), rgba(255, 255, 255, 0.38)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.35));
+  border: 1px solid rgba(219, 227, 238, 0.9);
+  border-radius: 34px;
+  box-shadow: var(--shadow-soft);
+  z-index: -1;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.48fr) minmax(315px, 0.8fr);
+  gap: 34px;
+  align-items: center;
+  padding: 52px;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.lead {
+  max-width: 780px;
+  margin: 0;
+  color: #4d5b70;
+  font-size: 1.2rem;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(23, 32, 51, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(23, 32, 51, 0.10);
+}
+
+.btn.primary {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+.profile-panel {
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(219, 227, 238, 0.98);
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.portrait {
+  width: 164px;
+  height: 164px;
+  border-radius: 35px;
+  margin-bottom: 22px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(23, 74, 124, 0.12), rgba(199, 147, 53, 0.10)),
+    var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--blue);
+  font-weight: 950;
+  font-size: 3.1rem;
+  letter-spacing: -0.08em;
+}
+
+.profile-panel h2 {
+  margin: 0 0 8px;
+  letter-spacing: -0.04em;
+}
+
+.profile-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.profile-meta {
+  margin-top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.profile-meta div {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.profile-meta span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.profile-meta strong {
+  display: block;
+  margin-top: 3px;
+}
+
+.section {
+  padding: 62px 0;
+  border-top: 1px solid rgba(219, 227, 238, 0.9);
+}
+
+.intro-grid,
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(335px, 0.95fr);
+  gap: 26px;
+}
+
+.about-card,
+.news-panel,
+.info-box {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-card h2,
+.section-heading h2,
+.panel-header h2,
+.info-box h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+
+.about-card p,
+.section-heading p,
+.pub-main p,
+.research-cards p,
+.timeline p,
+.experience-list p,
+.teaching-grid p,
+.info-box li {
+  color: var(--muted);
+}
+
+.news-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-list time {
+  color: var(--blue);
+  font-weight: 900;
+  font-size: 0.92rem;
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+
+.section-heading p:last-child {
+  margin-top: 0;
+}
+
+.publication-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.publication-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(var(--blue), var(--gold));
+}
+
+.venue-badge {
+  width: 132px;
+  min-height: 132px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 18px;
+  font-weight: 950;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: white;
+  box-shadow: 0 16px 38px rgba(23, 74, 124, 0.18);
+}
+
+.venue-badge.neurips {
+  background: linear-gradient(135deg, #172033, #174a7c);
+}
+
+.venue-badge.icml {
+  background: linear-gradient(135deg, #174a7c, #1f7a65);
+}
+
+.pub-main h3 {
+  margin: 0 0 8px;
+  font-size: 1.55rem;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+}
+
+.authors {
+  margin: 0 0 12px;
+}
+
+.link-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.link-row a {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--blue-soft);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.link-row a:hover {
+  text-decoration: none;
+  background: #d9eafb;
+}
+
+.pub-category {
+  margin-top: 36px;
+}
+
+.pub-category h3 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+}
+
+.compact-pubs {
+  display: grid;
+  gap: 12px;
+}
+
+.compact-pubs article {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.pub-index {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  font-weight: 950;
+}
+
+.compact-pubs h4 {
+  margin: 0 0 5px;
+  font-size: 1.03rem;
+}
+
+.compact-pubs p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.work-grid,
+.research-cards,
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-grid span,
+.research-cards article,
+.teaching-grid article {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+.research-cards span {
+  color: var(--gold);
+  font-weight: 950;
+}
+
+.research-cards h3,
+.teaching-grid h3 {
+  margin: 10px 0 8px;
+  letter-spacing: -0.035em;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline article,
+.experience-list article {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.timeline time,
+.date {
+  color: var(--blue);
+  font-weight: 950;
+}
+
+.timeline h3,
+.experience-list h3 {
+  margin: 0 0 8px;
+  letter-spacing: -0.035em;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.footer {
+  background: #111827;
+  color: #d5dde8;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 920px) {
+  .hero-content,
+  .intro-grid,
+  .split,
+  .research-cards,
+  .teaching-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 32px;
+  }
+
+  .publication-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-badge {
+    width: auto;
+    min-height: 76px;
+    justify-content: start;
+    place-items: center start;
+  }
+}
+
+@media (max-width: 760px) {
+  main {
+    padding-inline: 18px;
+  }
+
+  .nav {
+    padding-inline: 18px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 67px;
+    left: 0;
+    right: 0;
+    padding: 16px 22px 22px;
+    background: white;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: 34px;
+  }
+
+  .hero-content {
+    padding: 24px;
+  }
+
+  .news-list li,
+  .timeline article,
+  .experience-list article {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .compact-pubs article {
+    grid-template-columns: 1fr;
+  }
+}
+'''
+
+readme = r'''# Taeseong Yoon — Academic Personal Website
+
+This is a GitHub Pages-ready academic website.
+
+## Files
+
+- `index.html`
+- `style.css`
+
+## Upload
+
+Upload both files to your GitHub Pages repository:
+
+```text
+TaeseongYoon.github.io
