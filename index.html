@@ -3,19 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taeseong Yoon</title>
-  <meta name="description" content="Taeseong Yoon — Ph.D. Candidate at KAIST. Research in uncertainty quantification, evidential deep learning, Bayesian deep learning, and industrial anomaly detection." />
+  <title>Taeseong Yoon — KAIST</title>
+  <meta name="description" content="Taeseong Yoon — Ph.D. Candidate at KAIST. Research in uncertainty quantification, evidential deep learning, Bayesian deep learning, and reliable AI." />
+  <meta name="author" content="Taeseong Yoon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Taeseong Yoon — KAIST" />
+  <meta property="og:description" content="Ph.D. candidate at KAIST working on uncertainty quantification and reliable deep learning." />
+
+  <!-- Fonts: Fraunces (display serif) + Geist (UI sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Geist:wght@300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="topbar">
-    <nav class="nav">
-      <a class="logo" href="#home">
-        <span class="logo-mark">TY</span>
-        <span>Taeseong Yoon</span>
+    <nav class="nav" aria-label="Primary">
+      <a class="logo" href="#home" aria-label="Home">
+        <span class="logo-mark" aria-hidden="true">TY</span>
+        <span class="logo-text">Taeseong Yoon</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <div class="nav-links">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#research">Research</a>
@@ -27,92 +43,130 @@
     </nav>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <div class="hero-copy">
-          <p class="eyebrow">KAIST · Industrial Statistics Lab</p>
-          <h1>Taeseong Yoon</h1>
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> KAIST · Industrial Statistics Lab</p>
+          <h1>
+            <span class="hero-name">Taeseong</span>
+            <span class="hero-name italic">Yoon</span>
+          </h1>
           <p class="lead">
-            Ph.D. candidate in Industrial & Systems Engineering at KAIST, working on
-            uncertainty quantification, evidential deep learning, Bayesian deep learning,
-            and reliable AI for high-stakes decision-making.
+            Ph.D. candidate in Industrial &amp; Systems Engineering at <strong>KAIST</strong>,
+            working on <em>uncertainty quantification</em>, evidential deep learning, Bayesian
+            deep learning, and reliable AI for high-stakes decision-making.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="mailto:your.email@kaist.ac.kr">Email</a>
+            <a class="btn primary" href="mailto:your.email@kaist.ac.kr">
+              <span>Email</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
             <a class="btn" href="https://scholar.google.com/citations?hl=ko&user=MSiVD2gAAAAJ">Google Scholar</a>
             <a class="btn" href="https://github.com/TaeseongYoon">GitHub</a>
-            <a class="btn" href="files/cv.pdf">CV</a>
+            <a class="btn" href="files/cv.pdf">Curriculum Vitae</a>
           </div>
         </div>
 
-        <aside class="profile-panel">
-          <div class="portrait">TY</div>
-          <div>
+        <aside class="profile-panel reveal" aria-label="Profile">
+          <div class="portrait" aria-hidden="true">
+            <span>TY</span>
+          </div>
+          <div class="profile-name">
             <h2>Taeseong Yoon</h2>
-            <p>Ph.D. Candidate<br />Department of Industrial & Systems Engineering<br />KAIST</p>
+            <p>Ph.D. Candidate<br />Department of Industrial &amp; Systems Engineering<br />KAIST</p>
           </div>
-          <div class="profile-meta">
+          <dl class="profile-meta">
             <div>
-              <span>Advisor</span>
-              <strong>Prof. Heeyoung Kim</strong>
+              <dt>Advisor</dt>
+              <dd>Prof. Heeyoung Kim</dd>
             </div>
             <div>
-              <span>Lab</span>
-              <strong>Industrial Statistics Lab</strong>
+              <dt>Lab</dt>
+              <dd>Industrial Statistics Lab</dd>
             </div>
             <div>
-              <span>Research</span>
-              <strong>Uncertainty Quantification · Reliable AI</strong>
+              <dt>Focus</dt>
+              <dd>Uncertainty Quantification &middot; Reliable AI</dd>
             </div>
-          </div>
+          </dl>
         </aside>
       </div>
     </section>
 
     <section id="about" class="section intro-grid">
-      <div class="about-card">
+      <div class="about-card reveal">
         <p class="section-kicker">About</p>
         <h2>Researching reliable deep learning under uncertainty.</h2>
         <p>
-          I am a Ph.D. candidate at KAIST advised by Professor Heeyoung Kim. My research focuses on
-          uncertainty-aware deep learning methods that remain reliable under distribution shift,
-          class imbalance, noisy labels, and industrial anomaly detection scenarios.
+          I am a Ph.D. candidate at KAIST advised by <a href="#">Professor Heeyoung Kim</a>.
+          My research focuses on uncertainty-aware deep learning methods that remain reliable
+          under distribution shift, class imbalance, noisy labels, and industrial
+          anomaly-detection scenarios.
         </p>
         <p>
           My recent work develops flexible evidential learning frameworks and interpretable
-          uncertainty-aware classification models, with applications to robust classification and
-          multivariate time-series anomaly detection.
+          uncertainty-aware classification models, with applications to robust classification
+          and multivariate time-series anomaly detection.
         </p>
       </div>
 
-      <div class="news-panel">
+      <div class="news-panel reveal">
         <div class="panel-header">
           <p class="section-kicker">Updates</p>
           <h2>News</h2>
         </div>
         <ul class="news-list">
+          <li>
+            <time>May 2026</time>
+            <span><span class="badge badge-new">New</span> Our paper <em>Courtroom Analogy</em> is accepted at <strong>ICML 2026</strong>.</span>
+          </li>
           <li><time>Dec 2025</time><span>Presented F-EDL at NeurIPS 2025.</span></li>
           <li><time>Oct 2025</time><span>Presented F-EDL in an invited session at INFORMS Annual Meeting.</span></li>
           <li><time>Jul 2025</time><span>Gave an invited seminar on uncertainty quantification methods for deep learning at Posco Labs.</span></li>
-          <li><time>Jul 2024</time><span>Presented DAEDL at ICML 2024.</span></li>
           <li><time>Oct 2024</time><span>Received Best Poster Award, 3rd Prize, at Samsung AI Forum 2024.</span></li>
+          <li><time>Jul 2024</time><span>Presented DAEDL at ICML 2024.</span></li>
         </ul>
       </div>
     </section>
 
     <section id="publications" class="section publications-section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="section-kicker">Selected Work</p>
         <h2>Publications</h2>
-        <p>
-          My work focuses on principled and practical uncertainty estimation for modern deep learning systems.
+        <p class="section-sub">
+          My work focuses on principled and practical uncertainty estimation for modern deep
+          learning systems. <span class="muted-inline">(* equal contribution)</span>
         </p>
       </div>
 
-      <div class="publication-feature">
-        <div class="venue-badge neurips">NeurIPS 2025</div>
+      <!-- Featured: ICML 2026 (newest) -->
+      <article class="publication-feature reveal">
+        <div class="venue-badge icml-2026">
+          <span class="venue-name">ICML</span>
+          <span class="venue-year">2026</span>
+          <span class="venue-tag">Accepted</span>
+        </div>
+        <div class="pub-main">
+          <h3>Courtroom Analogy: A New Perspective on Uncertainty-Aware Classification</h3>
+          <p class="authors"><strong>Taeseong Yoon</strong> and Heeyoung Kim</p>
+          <p>
+            A new framework for uncertainty-aware classification that reframes the prediction
+            problem through a courtroom metaphor — separating evidence collection, deliberation,
+            and verdict to produce more interpretable and well-calibrated predictions.
+          </p>
+          <div class="link-row">
+            <a href="#">Paper (coming soon)</a>
+            <a href="#">Code (coming soon)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="publication-feature reveal">
+        <div class="venue-badge neurips">
+          <span class="venue-name">NeurIPS</span>
+          <span class="venue-year">2025</span>
+        </div>
         <div class="pub-main">
           <h3>Uncertainty Estimation by Flexible Evidential Deep Learning</h3>
           <p class="authors"><strong>Taeseong Yoon</strong> and Heeyoung Kim</p>
@@ -127,17 +181,20 @@
             <a href="https://github.com/TaeseongYoon/F-EDL">Code</a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="publication-feature">
-        <div class="venue-badge icml">ICML 2024</div>
+      <article class="publication-feature reveal">
+        <div class="venue-badge icml">
+          <span class="venue-name">ICML</span>
+          <span class="venue-year">2024</span>
+        </div>
         <div class="pub-main">
-          <h3>Uncertainty Estimation by Density Aware Evidential Deep Learning</h3>
+          <h3>Uncertainty Estimation by Density-Aware Evidential Deep Learning</h3>
           <p class="authors"><strong>Taeseong Yoon</strong> and Heeyoung Kim</p>
           <p>
-            Density Aware Evidential Deep Learning improves evidential uncertainty estimation by
-            incorporating feature-space density information at prediction time and introducing
-            a parameterization designed to improve classification and OOD detection.
+            Density-Aware Evidential Deep Learning improves evidential uncertainty estimation by
+            incorporating feature-space density information at prediction time, alongside a
+            new parameterization designed to improve classification and OOD detection.
           </p>
           <div class="link-row">
             <a href="https://arxiv.org/abs/2409.08754">arXiv</a>
@@ -145,69 +202,68 @@
             <a href="https://github.com/TaeseongYoon/DAEDL">Code</a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="pub-category">
-        <h3>Preprints</h3>
+      <div class="pub-category reveal">
+        <h3 class="pub-category-title">Preprints &amp; Under Review</h3>
         <div class="compact-pubs">
-          <article>
-            <span class="pub-index">P4</span>
-            <div>
-              <h4>LALA: Learning-Aware Logit Adjustment for Class Imbalanced Semi-Supervised Learning</h4>
-              <p>T. Park, <strong>T. Yoon</strong>, and H. Kim. To be submitted to NeurIPS 2026.</p>
-            </div>
-          </article>
           <article>
             <span class="pub-index">P3</span>
             <div>
-              <h4>Graph-Transformer-Enhanced Probabilistic State-Space Models for Multivariate Time Series Anomaly Detection</h4>
-              <p>W. Koo, J. Lee, <strong>T. Yoon</strong>, and H. Kim. Under review at KDD 2026.</p>
+              <h4>LALA: Learning-Aware Logit Adjustment for Class-Imbalanced Semi-Supervised Learning</h4>
+              <p>T. Park, <strong>T. Yoon</strong>, and H. Kim. <span class="status">To be submitted to NeurIPS 2026.</span></p>
             </div>
           </article>
           <article>
             <span class="pub-index">P2</span>
             <div>
-              <h4>Courtroom Analogy: New Perspective on Uncertainty-Aware Classification</h4>
-              <p><strong>T. Yoon</strong> and H. Kim. Under review at ICML 2026.</p>
+              <h4>Graph-Transformer-Enhanced Probabilistic State-Space Models for Multivariate Time-Series Anomaly Detection</h4>
+              <p>W. Koo, J. Lee, <strong>T. Yoon</strong>, and H. Kim. <span class="status">Under review at KDD 2026.</span></p>
             </div>
           </article>
           <article>
             <span class="pub-index">P1</span>
             <div>
-              <h4>Knowledge-Assisted Multi-Graph Structure Learning for Multivariate Time Series Anomaly Detection in Multi-Stage Industrial Processes</h4>
-              <p>J. Lee*, <strong>T. Yoon*</strong>, W. Koo, and H. Kim. Major revision at IEEE TASE.</p>
+              <h4>Knowledge-Assisted Multi-Graph Structure Learning for Multivariate Time-Series Anomaly Detection in Multi-Stage Industrial Processes</h4>
+              <p>J. Lee*, <strong>T. Yoon*</strong>, W. Koo, and H. Kim. <span class="status">Major revision at IEEE TASE.</span></p>
             </div>
           </article>
         </div>
       </div>
 
-      <div class="pub-category">
-        <h3>Working Papers</h3>
+      <div class="pub-category reveal">
+        <h3 class="pub-category-title">Working Papers</h3>
         <div class="work-grid">
-          <span>DIVE: Disentangled Variational Evidential Learning</span>
-          <span>Adaptive Variable Selection for Continuous Treatment Effect Estimation</span>
+          <article class="work-card">
+            <span class="work-tag">In progress</span>
+            <h4>DIVE: Disentangled Variational Evidential Learning</h4>
+          </article>
+          <article class="work-card">
+            <span class="work-tag">In progress</span>
+            <h4>Adaptive Variable Selection for Continuous Treatment-Effect Estimation</h4>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="research" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="section-kicker">Research Areas</p>
         <h2>Research Interests</h2>
       </div>
       <div class="research-cards">
-        <article>
-          <span>01</span>
+        <article class="reveal">
+          <span class="num">01</span>
           <h3>Uncertainty Quantification</h3>
           <p>Evidential deep learning, Bayesian deep learning, uncertainty-aware classification, calibration, and single-forward-pass uncertainty estimation.</p>
         </article>
-        <article>
-          <span>02</span>
+        <article class="reveal">
+          <span class="num">02</span>
           <h3>Robust Deep Learning</h3>
           <p>OOD detection, distribution shift, long-tailed recognition, noisy labels, and reliable confidence estimation.</p>
         </article>
-        <article>
-          <span>03</span>
+        <article class="reveal">
+          <span class="num">03</span>
           <h3>Industrial AI</h3>
           <p>Multivariate time-series anomaly detection, graph structure learning, manufacturing process monitoring, and quality testing.</p>
         </article>
@@ -215,64 +271,64 @@
     </section>
 
     <section id="talks" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="section-kicker">Presentations</p>
         <h2>Talks</h2>
       </div>
       <div class="timeline">
-        <article>
+        <article class="reveal">
           <time>2025</time>
           <div>
             <h3>Uncertainty Estimation by Flexible Evidential Deep Learning</h3>
-            <p>NeurIPS 2025 Poster · KIIE Annual Conference · INFORMS Annual Meeting Invited Session</p>
+            <p>NeurIPS 2025 (Poster) · KIIE Annual Conference · INFORMS Annual Meeting (Invited Session)</p>
           </div>
         </article>
-        <article>
+        <article class="reveal">
           <time>2024–2025</time>
           <div>
-            <h3>Uncertainty Estimation by Density Aware Evidential Deep Learning</h3>
-            <p>ICML 2024 Poster · Samsung AI Forum Invited Poster · Qualcomm AI Fellowship Korea Finalist Session · KIIE Annual Spring Conference</p>
+            <h3>Uncertainty Estimation by Density-Aware Evidential Deep Learning</h3>
+            <p>ICML 2024 (Poster) · Samsung AI Forum (Invited Poster) · Qualcomm AI Fellowship Korea (Finalist Session) · KIIE Annual Spring Conference</p>
           </div>
         </article>
-        <article>
+        <article class="reveal">
           <time>2025</time>
           <div>
             <h3>Uncertainty Quantification Methods for Deep Learning</h3>
-            <p>Invited Seminar, Posco Labs</p>
+            <p>Invited Seminar — Posco Labs</p>
           </div>
         </article>
       </div>
     </section>
 
     <section id="service" class="section split">
-      <div class="info-box">
+      <div class="info-box reveal">
         <p class="section-kicker">Academic Service</p>
         <h2>Reviewer</h2>
         <ul>
           <li>NeurIPS 2025, NeurIPS 2026, ICML 2026</li>
           <li>IISE Transactions</li>
-          <li>Computers & Industrial Engineering</li>
+          <li>Computers &amp; Industrial Engineering</li>
           <li>Medical Image Analysis</li>
         </ul>
       </div>
-      <div class="info-box">
+      <div class="info-box reveal">
         <p class="section-kicker">Recognition</p>
         <h2>Awards</h2>
         <ul>
           <li>Finalist, Qualcomm Innovation Fellowship Korea 2024</li>
-          <li>Best Poster Award, 3rd Prize, Samsung AI Forum 2024</li>
-          <li>Dean’s List, KAIST ISE</li>
+          <li>Best Poster Award (3rd Prize), Samsung AI Forum 2024</li>
+          <li>Dean's List, KAIST ISE</li>
         </ul>
       </div>
     </section>
 
     <section id="experience" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="section-kicker">Professional Background</p>
         <h2>Experience</h2>
       </div>
       <div class="experience-list">
-        <article>
+        <article class="reveal">
           <div class="date">Jul 2023 – Aug 2023</div>
           <div>
             <h3>Research Intern, Samsung Advanced Institute of Technology</h3>
@@ -280,55 +336,107 @@
             <p>Uncertainty-based anomaly detection for automated quality testing in semiconductor manufacturing.</p>
           </div>
         </article>
-        <article>
+        <article class="reveal">
           <div class="date">Jul 2021 – Aug 2021</div>
           <div>
-            <h3>Research Intern, Industrial Statistics Lab</h3>
+            <h3>Research Intern, Industrial Statistics Lab (KAIST)</h3>
             <p>Bayesian nonparametrics and Dirichlet Process Gaussian Mixture Models.</p>
           </div>
         </article>
-        <article>
+        <article class="reveal">
           <div class="date">Jan 2021 – Feb 2021</div>
           <div>
             <h3>Intern, SK Hynix</h3>
             <p class="muted">Quality Assurance Team, Mobile DRAM Engineering</p>
-            <p>Bank address pattern analysis using sequential pattern mining.</p>
+            <p>Bank-address pattern analysis using sequential pattern mining.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section id="teaching" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="section-kicker">Teaching</p>
-        <h2>Teaching and Activities</h2>
+        <h2>Teaching &amp; Activities</h2>
       </div>
       <div class="teaching-grid">
-        <article>
+        <article class="reveal">
           <h3>Teaching Assistant</h3>
-          <p>Engineering Statistics 1 (IE241), KAIST · Mar 2025 – Jun 2025</p>
+          <p>Engineering Statistics 1 (IE241), KAIST<br /><span class="muted">Mar 2025 – Jun 2025</span></p>
         </article>
-        <article>
+        <article class="reveal">
           <h3>Tutor</h3>
-          <p>Engineering Statistics 1 (IE241), KAIST · Mar 2023 – Jun 2023</p>
-          <p>Engineering Statistics 2 (IE242), KAIST · Sep 2023 – Dec 2023; Sep 2024 – Dec 2024; Sep 2025 – Dec 2025</p>
+          <p>Engineering Statistics 1 (IE241), KAIST<br /><span class="muted">Mar 2023 – Jun 2023</span></p>
+          <p>Engineering Statistics 2 (IE242), KAIST<br /><span class="muted">Sep 2023 – Dec 2023; Sep 2024 – Dec 2024; Sep 2025 – Dec 2025</span></p>
         </article>
-        <article>
+        <article class="reveal">
           <h3>Lab Representative</h3>
-          <p>Industrial Statistics Lab, KAIST · Mar 2025 – Present</p>
+          <p>Industrial Statistics Lab, KAIST<br /><span class="muted">Mar 2025 – Present</span></p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Taeseong Yoon. Built with GitHub Pages.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark" aria-hidden="true">TY</span>
+        <p>Taeseong Yoon &middot; KAIST</p>
+      </div>
+      <p class="footer-meta">© 2026 Taeseong Yoon. Built with care &middot; Hosted on GitHub Pages.</p>
+    </div>
   </footer>
 
   <script>
-    const toggle = document.querySelector(".nav-toggle");
-    const links = document.querySelector(".nav-links");
-    toggle.addEventListener("click", () => links.classList.toggle("open"));
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.classList.toggle('is-open', open);
+    });
+    // Close mobile nav on link click
+    links.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+
+    // Scroll-reveal (Intersection Observer)
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    reveals.forEach((el) => io.observe(el));
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('main section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const id = e.target.id;
+            navAnchors.forEach((a) =>
+              a.classList.toggle('active', a.getAttribute('href') === `#${id}`)
+            );
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    sections.forEach((s) => spy.observe(s));
   </script>
 </body>
 </html>
