@@ -1,25 +1,27 @@
 /* ============================================================
    Taeseong Yoon — Academic Homepage
-   Aesthetic: al-folio inspired · classic academic · red accent
+   Aesthetic: al-folio inspired · classic academic · deep-blue accent
    Type: Roboto Slab (display) + Roboto (body) + Source Code Pro (mono)
    ============================================================ */
 
 :root {
   --bg:           #ffffff;
-  --bg-alt:       #f7f7f9;
-  --bg-soft:      #fafafa;
+  --bg-alt:       #f7f8fa;
+  --bg-soft:      #fafbfc;
 
-  --text:         #1f1f1f;
-  --text-2:       #333537;
+  --text:         #1f2230;
+  --text-2:       #333542;
   --muted:        #6b7280;
   --muted-2:      #9ca3af;
 
-  --line:         #e8e8ec;
-  --line-soft:    #f0f0f3;
+  --line:         #e5e8ed;
+  --line-soft:    #eef0f4;
 
-  --primary:      #B11030;     /* al-folio red */
-  --primary-dark: #8a0d26;
-  --primary-soft: #fce7eb;
+  /* Deep blue accent palette */
+  --primary:      #1e3a8a;     /* deep navy-blue */
+  --primary-dark: #172554;     /* darker hover */
+  --primary-bright: #1e40af;   /* slightly brighter for vivid moments */
+  --primary-soft: #dbeafe;     /* soft tint for backgrounds */
 
   --serif: "Roboto Slab", "Source Serif Pro", Georgia, serif;
   --sans:  "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
@@ -210,13 +212,13 @@ main {
   margin: 0 auto 22px;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 28%, rgba(177, 16, 48, 0.25), transparent 60%),
-    radial-gradient(circle at 70% 70%, rgba(31, 31, 31, 0.16), transparent 60%),
+    radial-gradient(circle at 30% 28%, rgba(30, 64, 175, 0.28), transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(31, 34, 48, 0.16), transparent 60%),
     var(--bg-alt);
   border: 1px solid var(--line);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 22px rgba(31, 31, 31, 0.08);
+  box-shadow: 0 6px 22px rgba(31, 34, 48, 0.08);
 }
 .profile-photo img {
   width: 100%; height: 100%;
@@ -317,12 +319,12 @@ main {
   flex-shrink: 0;
   position: relative;
   top: 2px;
-  box-shadow: 0 0 0 0 rgba(177, 16, 48, 0.4);
+  box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.45);
   animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(177, 16, 48, 0.45); }
-  50%      { box-shadow: 0 0 0 7px rgba(177, 16, 48, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.45); }
+  50%      { box-shadow: 0 0 0 7px rgba(30, 58, 138, 0); }
 }
 .open-to em { color: var(--text-2); font-style: italic; }
 
@@ -458,7 +460,7 @@ main {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  box-shadow: 0 4px 12px rgba(31, 31, 31, 0.10);
+  box-shadow: 0 4px 12px rgba(31, 34, 48, 0.10);
 }
 .paper-thumb::before {
   content: "";
@@ -482,11 +484,21 @@ main {
   letter-spacing: 0.04em;
   opacity: 0.92;
 }
+.thumb-sub {
+  margin-top: 4px;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  opacity: 0.95;
+}
 
-.thumb-icml-2026 { background: linear-gradient(135deg, #9d2553, #B11030); }
-.thumb-neurips   { background: linear-gradient(135deg, #2d3748, #1a202c); }
-.thumb-icml      { background: linear-gradient(135deg, #1e3a8a, #2563eb); }
-.thumb-preprint  { background: linear-gradient(135deg, #6b7280, #374151); }
+/* Thumbnail gradients (each venue gets a distinct look) */
+.thumb-icml-2026 { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }   /* deep blue (featured) */
+.thumb-neurips   { background: linear-gradient(135deg, #1f2937, #0f172a); }   /* charcoal */
+.thumb-icml      { background: linear-gradient(135deg, #115e59, #14b8a6); }   /* teal */
+.thumb-tase      { background: linear-gradient(135deg, #92400e, #d97706); }   /* amber/journal */
+.thumb-preprint  { background: linear-gradient(135deg, #6b7280, #4b5563); }   /* grey */
 .thumb-preprint .thumb-venue { font-size: 1.15rem; }
 
 .paper-body {
@@ -512,13 +524,13 @@ main {
   text-transform: uppercase;
   color: white;
 }
-.venue-icml    { background: #B11030; }
-.venue-neurips { background: #1a202c; }
-.venue-iclr    { background: #1e40af; }
-.venue-arxiv   { background: #6b7280; }
-.venue-journal { background: #4b5563; }
+.venue-icml    { background: var(--primary-bright); }    /* deep blue */
+.venue-neurips { background: #1f2937; }                  /* charcoal */
+.venue-iclr    { background: #0f766e; }                  /* teal */
+.venue-arxiv   { background: #6b7280; }                  /* grey */
+.venue-journal { background: #b45309; }                  /* amber */
 
-/* Topic tags */
+/* Topic tags — three core research areas */
 .topic {
   display: inline-block;
   padding: 2px 8px;
@@ -529,11 +541,9 @@ main {
   font-weight: 500;
   letter-spacing: 0.02em;
 }
-.topic-uncertainty { color: #9d174d; border-color: #fce7f3; background: #fdf2f8; }
-.topic-robust      { color: #92400e; border-color: #fef3c7; background: #fffbeb; }
-.topic-ood         { color: #1e40af; border-color: #dbeafe; background: #eff6ff; }
-.topic-timeseries  { color: #6b21a8; border-color: #ede9fe; background: #f5f3ff; }
-.topic-industrial  { color: #166534; border-color: #dcfce7; background: #f0fdf4; }
+.topic-uncertainty { color: #1e3a8a; border-color: #bfdbfe; background: #eff6ff; }   /* blue family — matches accent */
+.topic-robust      { color: #92400e; border-color: #fde68a; background: #fffbeb; }   /* amber */
+.topic-timeseries  { color: #6b21a8; border-color: #ddd6fe; background: #f5f3ff; }   /* violet */
 
 /* Status tags */
 .status {
@@ -629,7 +639,7 @@ main {
 }
 .research-grid article:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(31, 31, 31, 0.07);
+  box-shadow: 0 6px 18px rgba(31, 34, 48, 0.07);
 }
 .research-grid h3 {
   margin: 0 0 8px;
@@ -819,4 +829,5 @@ main {
   }
   .thumb-venue { font-size: 1.1rem; }
   .thumb-year { margin-top: 0; }
+  .thumb-sub  { margin-top: 0; }
 }
