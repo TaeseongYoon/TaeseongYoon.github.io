@@ -63,7 +63,7 @@ a:hover {
 ::selection { background: var(--primary); color: white; }
 
 strong { font-weight: 700; color: var(--text); }
-em { font-style: italic; }
+em     { font-style: italic; }
 
 .skip-link {
   position: absolute; left: -9999px;
@@ -297,8 +297,8 @@ main {
   color: var(--text-2);
 }
 .bio p:last-child { margin-bottom: 0; }
-.bio strong { color: var(--text); }
-.bio em { color: var(--text); font-style: italic; }
+/* bio inherits global strong/em rules */
+.bio em { color: var(--text-2); font-style: italic; }
 
 .open-to {
   margin-top: 22px !important;
@@ -349,10 +349,10 @@ main {
 .block-title::after {
   content: "";
   display: block;
-  width: 38px;
-  height: 3px;
+  width: 32px;
+  height: 2px;
   background: var(--primary);
-  margin-top: 8px;
+  margin-top: 10px;
   border-radius: 2px;
 }
 
@@ -402,6 +402,7 @@ main {
   color: var(--text-2);
   line-height: 1.55;
 }
+.news-list strong { color: var(--text); }
 .news-list em {
   font-style: italic;
   color: var(--text);
@@ -428,11 +429,12 @@ main {
 .year-tag {
   margin: 32px 0 18px;
   padding-bottom: 6px;
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.18rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   border-bottom: 1px dashed var(--line);
 }
 
@@ -629,31 +631,53 @@ main {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
+
+/* Per-area accent colours, matching the topic tags in publications */
 .research-grid article {
-  padding: 22px;
+  padding: 24px 22px 22px;
   background: var(--bg-soft);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--primary);
+  border-top: 3px solid var(--ri-color, var(--primary));
   border-radius: 4px;
   transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease);
+  position: relative;
 }
+.research-grid article:nth-child(1) { --ri-color: #1e3a8a; --ri-bg: #eff6ff; --ri-icon-color: #1e40af; }  /* blue — UQ */
+.research-grid article:nth-child(2) { --ri-color: #92400e; --ri-bg: #fffbeb; --ri-icon-color: #b45309; }  /* amber — Robust DL */
+.research-grid article:nth-child(3) { --ri-color: #6b21a8; --ri-bg: #f5f3ff; --ri-icon-color: #7c3aed; }  /* violet — Time Series */
+
 .research-grid article:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(31, 34, 48, 0.07);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(31, 34, 48, 0.09);
 }
+
+/* Icon badge */
+.research-grid .ri-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--ri-bg);
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .research-grid h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: -0.005em;
-  color: var(--text);
+  font-weight: 600;
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
+  color: var(--ri-color, var(--text));
 }
 .research-grid p {
   margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ============== Talks / entry list ============== */
@@ -780,7 +804,7 @@ main {
   .bio p { text-align: left; }
   .open-to { text-align: left; }
 
-  .research-grid { grid-template-columns: 1fr; gap: 14px; }
+  .research-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 }
 
 @media (max-width: 720px) {
@@ -816,6 +840,8 @@ main {
     grid-template-columns: 1fr;
     gap: 4px;
   }
+
+  .research-grid { grid-template-columns: 1fr; }
 
   .paper {
     grid-template-columns: 1fr;
