@@ -4,23 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taeseong Yoon</title>
-  <meta name="description" content="Taeseong Yoon — Ph.D. candidate at KAIST. Research on uncertainty quantification, evidential deep learning, and reliable AI." />
+  <meta name="description" content="Taeseong Yoon — Ph.D. candidate at KAIST. Uncertainty quantification for deep learning." />
   <meta name="author" content="Taeseong Yoon" />
-
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Taeseong Yoon — KAIST" />
   <meta property="og:description" content="Ph.D. candidate at KAIST researching uncertainty quantification for deep learning." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============== TOP NAV ============== -->
+  <!-- Nav -->
   <header class="topbar">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="#home">Taeseong Yoon</a>
@@ -40,120 +37,116 @@
 
   <main id="main">
 
-    <!-- ============== HERO / ABOUT ============== -->
+    <!-- Hero -->
     <section id="home" class="hero">
-      <div class="hero-head">
-        <h1 class="display">Taeseong Yoon</h1>
-        <p class="subtitle">
-          Ph.D. Candidate · Industrial &amp; Systems Engineering · <a href="https://kaist.ac.kr">KAIST</a>
-        </p>
-      </div>
 
-      <div class="hero-body">
-        <aside class="profile">
-          <div class="profile-photo" aria-label="Taeseong Yoon">
-            <!-- HOW TO ADD YOUR PHOTO:
-                 1. Create an "assets/" folder next to index.html
-                 2. Put your photo there (e.g., assets/photo.jpg)
-                 3. Replace the <span> below with:
-                    <img src="assets/photo.jpg" alt="Taeseong Yoon" />
-            -->
-            <span class="photo-fallback" aria-hidden="true">TY</span>
-          </div>
-
+      <aside class="profile">
+        <div class="profile-photo" aria-label="Taeseong Yoon">
+          <!-- To add photo: replace the span with
+               <img src="assets/photo.jpg" alt="Taeseong Yoon" /> -->
+          <span class="photo-fallback" aria-hidden="true">TY</span>
+        </div>
+        <div>
           <ul class="contact-list">
             <li>
-              <span class="icon" aria-hidden="true">📧</span>
+              <span class="icon" aria-hidden="true">✉</span>
               <a href="mailto:bigstar0423@kaist.ac.kr">bigstar0423@kaist.ac.kr</a>
             </li>
             <li>
-              <span class="icon" aria-hidden="true">🏛</span>
+              <span class="icon" aria-hidden="true">⌖</span>
               E2-1, KAIST, Daejeon
             </li>
             <li>
-              <span class="icon" aria-hidden="true">🔬</span>
+              <span class="icon" aria-hidden="true">◈</span>
               <a href="https://eds.kaist.ac.kr/">Engineering Data Science Lab</a>
             </li>
           </ul>
-
           <div class="socials">
             <a href="mailto:bigstar0423@kaist.ac.kr" aria-label="Email" title="Email">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm2.4 0L12 12.5 19.6 6H4.4ZM20 8.3l-7.4 6.4a1 1 0 0 1-1.2 0L4 8.3V18h16V8.3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm2.4 0L12 12.5 19.6 6H4.4ZM20 8.3l-7.4 6.4a1 1 0 0 1-1.2 0L4 8.3V18h16V8.3Z"/></svg>
             </a>
             <a href="https://scholar.google.com/citations?hl=ko&user=MSiVD2gAAAAJ" aria-label="Google Scholar" title="Google Scholar">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 14 1 9l11-5 11 5-11 5Zm0 2 7-3.2v4.4c0 1.7-3.1 3.2-7 3.2s-7-1.5-7-3.2v-4.4L12 16Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 14 1 9l11-5 11 5-11 5Zm0 2 7-3.2v4.4c0 1.7-3.1 3.2-7 3.2s-7-1.5-7-3.2v-4.4L12 16Z"/></svg>
             </a>
             <a href="https://github.com/TaeseongYoon" aria-label="GitHub" title="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
             </a>
             <a href="https://www.linkedin.com/in/taeseong-yoon-3ba757208" aria-label="LinkedIn" title="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0Z"/></svg>
             </a>
             <a href="https://www.overleaf.com/read/jbgbnhqspqhc#0cef22" aria-label="CV" title="CV">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 7V3.5L18.5 9H13Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 7V3.5L18.5 9H13Z"/></svg>
             </a>
           </div>
-        </aside>
+        </div>
+      </aside>
+
+      <div>
+        <div class="hero-head">
+          <h1 class="display">Taeseong Yoon</h1>
+          <p class="subtitle">Ph.D. Candidate &thinsp;&middot;&thinsp; Industrial &amp; Systems Engineering &thinsp;&middot;&thinsp; <a href="https://kaist.ac.kr">KAIST</a></p>
+        </div>
 
         <div class="bio">
           <p>
-            Hi! I am a Ph.D. candidate at <a href="https://kaist.ac.kr">KAIST</a>, advised by
-            Professor <a href="https://eds.kaist.ac.kr/">Heeyoung Kim</a> at the
-            <a href="https://eds.kaist.ac.kr/">Engineering Data Science Lab</a>. My research primarily focuses on
-            <strong>uncertainty quantification (UQ) for deep learning</strong> &mdash; developing
-            <em>scalable</em>, <em>theoretically grounded</em> frameworks for reliable and
-            trustworthy predictions, with a core emphasis on
+            I am a Ph.D. candidate at <a href="https://kaist.ac.kr">KAIST</a>, advised by
+            Professor <a href="https://eds.kaist.ac.kr/">Heeyoung Kim</a> in the
+            <a href="https://eds.kaist.ac.kr/">Engineering Data Science Lab</a>.
+            My research focuses on <strong>uncertainty quantification (UQ) for deep learning</strong> &mdash;
+            scalable, theoretically grounded frameworks for reliable predictions, with emphasis on
             <em>evidential deep learning</em>, <em>efficient Bayesian inference</em>,
-            <em>out-of-distribution detection</em>, and <em>model robustness under distribution shifts</em>.
+            <em>out-of-distribution detection</em>, and <em>robustness under distribution shift</em>.
           </p>
           <p>
-            Beyond foundational UQ, I am interested in
-            <strong>statistical machine learning for complex structured and industrial data</strong>,
-            including <em>multivariate time-series anomaly detection</em>,
-            <em>class-imbalanced semi-supervised learning</em>, and
-            <em>continuous causal effect estimation</em>. My recent work includes
-            <a href="#publications"><strong>Courtroom Analogy</strong></a> (ICML 2026),
-            <a href="#publications"><strong>F&#8209;EDL</strong></a> (NeurIPS 2025), and
+            I am also interested in <strong>statistical machine learning for structured and industrial data</strong>,
+            including multivariate time-series anomaly detection, class-imbalanced semi-supervised learning,
+            and continuous causal effect estimation.
+            Recent publications: <a href="#publications"><strong>Courtroom Analogy</strong></a> (ICML 2026),
+            <a href="#publications"><strong>F&#8209;EDL</strong></a> (NeurIPS 2025),
             <a href="#publications"><strong>DAEDL</strong></a> (ICML 2024).
           </p>
           <p>
-            Previously, I was a research intern at <strong>Samsung Advanced Institute of
-            Technology (SAIT)</strong> and <strong>SK Hynix</strong>, where I worked on
-            uncertainty-aware anomaly detection and quality inspection for semiconductor
-            manufacturing.
+            Previously a research intern at <strong>Samsung Advanced Institute of Technology (SAIT)</strong>
+            and <strong>SK Hynix</strong>, working on uncertainty-aware anomaly detection for semiconductor manufacturing.
           </p>
 
-          <p class="open-to">
-            <em>I am happy to discuss research and collaborations. Feel free to reach out by email.</em>
-          </p>
+          <p class="open-to">Open to research discussions and collaborations &mdash; feel free to reach out.</p>
+
+          <div class="cv-cta">
+            <a href="https://www.overleaf.com/read/jbgbnhqspqhc#0cef22" class="cv-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 7V3.5L18.5 9H13Z"/></svg>
+              Curriculum Vitae
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============== NEWS ============== -->
+    <!-- News -->
     <section id="news" class="block">
-      <h2 class="block-title">news</h2>
-
+      <div class="section-header">
+        <h2 class="block-title">News</h2>
+      </div>
       <ul class="news-list">
         <li>
           <time>May 2026</time>
-          <p><span class="badge badge-new">new</span> Our paper <em>Courtroom Analogy</em> is accepted at <strong>ICML&nbsp;2026</strong>.</p>
+          <p><span class="badge badge-new">new</span><em>Courtroom Analogy</em> accepted at <strong>ICML 2026</strong>.</p>
         </li>
         <li>
           <time>May 2026</time>
-          <p>Recognized as a <strong>Gold Reviewer</strong> at <strong>ICML&nbsp;2026</strong>.</p>
+          <p>Recognized as a <strong>Gold Reviewer</strong> at ICML 2026.</p>
         </li>
         <li>
           <time>Dec 2025</time>
-          <p>Presented <strong>F&#8209;EDL</strong> at NeurIPS 2025 in San Diego.</p>
+          <p>Presented <strong>F&#8209;EDL</strong> at NeurIPS 2025, San Diego.</p>
         </li>
         <li>
           <time>Oct 2025</time>
-          <p>Gave an invited talk on F&#8209;EDL at the INFORMS Annual Meeting (Atlanta).</p>
+          <p>Invited talk on F&#8209;EDL at the INFORMS Annual Meeting, Atlanta.</p>
         </li>
         <li>
           <time>Jul 2025</time>
-          <p>Invited seminar on uncertainty quantification methods for deep learning at <strong>POSCO Labs</strong>.</p>
+          <p>Invited seminar on uncertainty quantification at <strong>POSCO Labs</strong>.</p>
         </li>
         <li>
           <time>Dec 2024</time>
@@ -161,40 +154,40 @@
         </li>
         <li>
           <time>Oct 2024</time>
-          <p>Received <strong>Best Poster Award (3rd Prize)</strong> at Samsung AI Forum 2024.</p>
+          <p><strong>Best Poster Award (3rd Prize)</strong> at Samsung AI Forum 2024.</p>
         </li>
         <li>
           <time>Jul 2024</time>
-          <p>Presented <strong>DAEDL</strong> at ICML 2024 in Vienna.</p>
+          <p>Presented <strong>DAEDL</strong> at ICML 2024, Vienna.</p>
         </li>
       </ul>
-
-      <a class="see-all" href="#">view all news →</a>
     </section>
 
-    <!-- ============== PUBLICATIONS ============== -->
+    <!-- Publications -->
     <section id="publications" class="block">
-      <h2 class="block-title">publications</h2>
-      <p class="block-sub">
-        Full list on <a href="https://scholar.google.com/citations?hl=ko&user=MSiVD2gAAAAJ">Google Scholar</a>.
-        <span class="muted">* equal contribution &nbsp;·&nbsp; <strong class="self-mark">bold</strong> denotes me.</span>
-      </p>
+      <div class="section-header">
+        <h2 class="block-title">Publications</h2>
+        <span class="section-meta">
+          <a href="https://scholar.google.com/citations?hl=ko&user=MSiVD2gAAAAJ">Google Scholar</a>
+          &ensp;&middot;&ensp; * equal contribution &ensp;&middot;&ensp; <strong class="self-mark">bold</strong> = me
+        </span>
+      </div>
 
-      <h3 class="year-tag">2026</h3>
+      <p class="year-label">2026</p>
 
       <article class="paper">
-        <div class="paper-thumb thumb-icml-2026" aria-hidden="true">
-          <span class="thumb-venue">ICML</span>
-          <span class="thumb-year">2026</span>
+        <div class="paper-chip">
+          <span class="chip-venue">ICML</span>
+          <span class="chip-year">2026</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="venue venue-icml">ICML 2026</span>
-            <span class="topic topic-uncertainty">Uncertainty Quantification</span>
+            <span class="vpill vpill-icml">ICML 2026</span>
+            <span class="tpill tpill-uq">Uncertainty Quantification</span>
           </div>
           <h4>Courtroom Analogy: A New Perspective on Uncertainty&#8209;Aware Classification</h4>
           <p class="authors"><strong>Taeseong Yoon</strong>, Heeyoung Kim</p>
-          <p class="venue-line">In <em>International Conference on Machine Learning (ICML)</em>, 2026</p>
+          <p class="venue-line"><em>International Conference on Machine Learning (ICML)</em>, 2026</p>
           <div class="links">
             <a href="https://arxiv.org/abs/2605.25616">[arXiv]</a>
             <a href="https://arxiv.org/pdf/2605.25616">[PDF]</a>
@@ -204,21 +197,21 @@
         </div>
       </article>
 
-      <h3 class="year-tag">2025</h3>
+      <p class="year-label">2025</p>
 
       <article class="paper">
-        <div class="paper-thumb thumb-neurips" aria-hidden="true">
-          <span class="thumb-venue">NeurIPS</span>
-          <span class="thumb-year">2025</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-neurips">NeurIPS</span>
+          <span class="chip-year">2025</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="venue venue-neurips">NeurIPS 2025</span>
-            <span class="topic topic-uncertainty">Uncertainty Quantification</span>
+            <span class="vpill vpill-neurips">NeurIPS 2025</span>
+            <span class="tpill tpill-uq">Uncertainty Quantification</span>
           </div>
           <h4>Uncertainty Estimation by Flexible Evidential Deep Learning</h4>
           <p class="authors"><strong>Taeseong Yoon</strong>, Heeyoung Kim</p>
-          <p class="venue-line">In <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2025</p>
+          <p class="venue-line"><em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 2025</p>
           <div class="links">
             <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/abf0ea3ae33d1a931483e327ff8d94f8-Abstract-Conference.html">[Proceedings]</a>
             <a href="https://openreview.net/forum?id=N6ujq5Yfwa">[OpenReview]</a>
@@ -228,21 +221,21 @@
         </div>
       </article>
 
-      <h3 class="year-tag">2024</h3>
+      <p class="year-label">2024</p>
 
       <article class="paper">
-        <div class="paper-thumb thumb-icml" aria-hidden="true">
-          <span class="thumb-venue">ICML</span>
-          <span class="thumb-year">2024</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-icml24">ICML</span>
+          <span class="chip-year">2024</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="venue venue-icml">ICML 2024</span>
-            <span class="topic topic-uncertainty">Uncertainty Quantification</span>
+            <span class="vpill" style="background:#0f766e;">ICML 2024</span>
+            <span class="tpill tpill-uq">Uncertainty Quantification</span>
           </div>
           <h4>Uncertainty Estimation by Density&#8209;Aware Evidential Deep Learning</h4>
           <p class="authors"><strong>Taeseong Yoon</strong>, Heeyoung Kim</p>
-          <p class="venue-line">In <em>Proceedings of the 41st International Conference on Machine Learning (ICML)</em>, 2024</p>
+          <p class="venue-line"><em>Proceedings of the 41st International Conference on Machine Learning (ICML)</em>, 2024</p>
           <div class="links">
             <a href="https://arxiv.org/abs/2409.08754">[arXiv]</a>
             <a href="https://proceedings.mlr.press/v235/yoon24a.html">[PMLR]</a>
@@ -251,239 +244,260 @@
         </div>
       </article>
 
-      <h3 class="year-tag">Manuscripts Under Review</h3>
+      <p class="year-label">Under Review</p>
 
       <article class="paper compact">
-        <div class="paper-thumb thumb-tase" aria-hidden="true">
-          <span class="thumb-venue">IEEE</span>
-          <span class="thumb-sub">TASE</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-tase">IEEE</span>
+          <span class="chip-year">TASE</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="topic topic-timeseries">Time Series</span>
-            <span class="status review">major revision</span>
+            <span class="tpill tpill-ts">Time Series</span>
+            <span class="spill spill-major">Major Revision</span>
           </div>
           <h4>Knowledge&#8209;Assisted Multi&#8209;Graph Structure Learning for Multivariate Time&#8209;Series Anomaly Detection in Multi&#8209;Stage Industrial Processes</h4>
           <p class="authors">J. Lee*, <strong>T. Yoon*</strong>, W. Koo, H. Kim</p>
-          <p class="venue-line"><em>Major revision at IEEE Transactions on Automation Science and Engineering</em></p>
+          <p class="venue-line"><em>Major revision &mdash; IEEE Transactions on Automation Science and Engineering</em></p>
         </div>
       </article>
 
       <article class="paper compact">
-        <div class="paper-thumb thumb-preprint" aria-hidden="true">
-          <span class="thumb-venue">under</span>
-          <span class="thumb-year">review</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-gray">ACM</span>
+          <span class="chip-year">CIKM</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="topic topic-timeseries">Time Series</span>
-            <span class="status review">under review</span>
+            <span class="tpill tpill-ts">Time Series</span>
+            <span class="spill spill-review">Under Review</span>
           </div>
           <h4>Graph&#8209;Transformer&#8209;Enhanced Probabilistic State&#8209;Space Models for Multivariate Time&#8209;Series Anomaly Detection</h4>
           <p class="authors">W. Koo, J. Lee, <strong>T. Yoon</strong>, H. Kim</p>
-          <p class="venue-line"><em>Under review at ACM International Conference on Information and Knowledge Management (CIKM)</em></p>
+          <p class="venue-line"><em>Under review &mdash; ACM CIKM</em></p>
         </div>
       </article>
 
       <article class="paper compact">
-        <div class="paper-thumb thumb-preprint" aria-hidden="true">
-          <span class="thumb-venue">under</span>
-          <span class="thumb-year">review</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-gray">NeurIPS</span>
+          <span class="chip-year">sub.</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="topic topic-robust">Robust DL</span>
-            <span class="status review">under review</span>
+            <span class="tpill tpill-rd">Robust DL</span>
+            <span class="spill spill-review">Under Review</span>
           </div>
           <h4>LALA: Learning&#8209;Aware Logit Adjustment for Class&#8209;Imbalanced Semi&#8209;Supervised Learning</h4>
           <p class="authors">T. Park, <strong>T. Yoon</strong>, H. Kim</p>
-          <p class="venue-line"><em>Under review at Advances in Neural Information Processing Systems (NeurIPS)</em></p>
+          <p class="venue-line"><em>Under review &mdash; NeurIPS</em></p>
         </div>
       </article>
 
-      <h3 class="year-tag">Ongoing Research</h3>
+      <p class="year-label">In Preparation</p>
 
       <article class="paper compact">
-        <div class="paper-thumb thumb-preprint" aria-hidden="true">
-          <span class="thumb-venue">in prep.</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-gray">prep.</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="topic topic-uncertainty">Uncertainty Quantification</span>
+            <span class="tpill tpill-uq">Uncertainty Quantification</span>
           </div>
-          <h4>BEND: Bayesian Effective&#8209;support Neural Dirichlet Network for Uncertainty Quantification</h4>
+          <h4>SCOPE: Support Calibrated Posterior Evidence for Second&#8209;Order Uncertainty Quantification</h4>
           <p class="authors"><strong>Taeseong Yoon</strong>, Heeyoung Kim</p>
           <p class="venue-line"><em>In preparation</em></p>
         </div>
       </article>
 
       <article class="paper compact">
-        <div class="paper-thumb thumb-preprint" aria-hidden="true">
-          <span class="thumb-venue">in prep.</span>
+        <div class="paper-chip">
+          <span class="chip-venue v-gray">prep.</span>
         </div>
         <div class="paper-body">
           <div class="tag-row">
-            <span class="topic topic-robust">Causal Inference</span>
+            <span class="tpill tpill-ci">Causal Inference</span>
           </div>
           <h4>Adaptive Variable Selection for Continuous Treatment Effect Estimation</h4>
           <p class="authors">H. Cho*, <strong>T. Yoon*</strong>, I. Jeong, H. Kim</p>
           <p class="venue-line"><em>In preparation</em></p>
         </div>
       </article>
-
-      <a class="see-all" href="https://www.overleaf.com/read/jbgbnhqspqhc#0cef22">view full CV →</a>
     </section>
 
-    <!-- ============== RESEARCH ============== -->
+    <!-- Research -->
     <section id="research" class="block">
-      <h2 class="block-title">research interests</h2>
-
+      <div class="section-header">
+        <h2 class="block-title">Research</h2>
+      </div>
       <p class="research-lead">
-        My research primarily focuses on <strong>uncertainty quantification (UQ) for deep
-        learning</strong>. I develop scalable, theoretically grounded frameworks to ensure
-        reliable and trustworthy predictions. Beyond foundational UQ, I am broadly
-        interested in <strong>statistical machine learning for complex structured and
-        industrial data</strong>.
+        My core focus is <strong>uncertainty quantification for deep learning</strong> &mdash; scalable, theoretically
+        grounded methods for reliable predictions. I am broadly interested in
+        <strong>statistical machine learning for complex structured and industrial data</strong>.
       </p>
-
       <div class="research-grid">
-        <article>
-          <div class="ri-icon" aria-hidden="true">◈</div>
+        <div class="ri-card">
+          <p class="ri-label">UQ &amp; Bayesian ML</p>
           <h3>Uncertainty Quantification</h3>
-          <p>Evidential deep learning, efficient Bayesian inference, out-of-distribution detection, and model robustness under distribution shifts.</p>
-        </article>
-        <article>
-          <div class="ri-icon" aria-hidden="true">∿</div>
-          <h3>Time-Series Anomaly Detection</h3>
-          <p>Multivariate time-series anomaly detection for complex structured and industrial data, including graph structure learning and probabilistic state-space models.</p>
-        </article>
-        <article>
-          <div class="ri-icon" aria-hidden="true">⬡</div>
-          <h3>Statistical ML for Structured Data</h3>
+          <p>Evidential deep learning, efficient Bayesian inference, OOD detection, and robustness under distribution shift.</p>
+        </div>
+        <div class="ri-card">
+          <p class="ri-label">Anomaly Detection</p>
+          <h3>Time-Series &amp; Industrial Data</h3>
+          <p>Multivariate time-series anomaly detection including graph structure learning and probabilistic state-space models.</p>
+        </div>
+        <div class="ri-card">
+          <p class="ri-label">Statistical ML</p>
+          <h3>Structured &amp; Imbalanced Data</h3>
           <p>Class-imbalanced semi-supervised learning and continuous causal effect estimation.</p>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- ============== TALKS ============== -->
+    <!-- Talks -->
     <section id="talks" class="block">
-      <h2 class="block-title">talks</h2>
-
-      <ul class="entry-list">
+      <div class="section-header">
+        <h2 class="block-title">Talks &amp; Presentations</h2>
+      </div>
+      <ul class="talk-list">
         <li>
           <time>2026</time>
           <div>
             <h4>Courtroom Analogy: A New Perspective on Uncertainty-Aware Classification</h4>
-            <p>ICML 2026 (Poster, Vancouver, planned) · KDMS 2026 Top Conference Session (Invited Talk, planned)</p>
+            <p>ICML 2026 (Poster, Seoul, planned) &ensp;&middot;&ensp; KDMS 2026 Top Conference Session (Invited Talk, planned)</p>
           </div>
         </li>
         <li>
           <time>2025</time>
           <div>
             <h4>Uncertainty Estimation by Flexible Evidential Deep Learning</h4>
-            <p>NeurIPS 2025 (Poster, San Diego) · KIIE Annual Fall Conference (Daejeon) · INFORMS Annual Meeting (Invited Session, Atlanta)</p>
+            <p>NeurIPS 2025 (Poster, San Diego) &ensp;&middot;&ensp; KIIE Annual Fall Conference (Daejeon) &ensp;&middot;&ensp; INFORMS Annual Meeting, Invited Session (Atlanta)</p>
           </div>
         </li>
         <li>
           <time>2025</time>
           <div>
             <h4>Uncertainty Quantification Methods for Deep Learning</h4>
-            <p>Invited Seminar &mdash; POSCO Labs (Jul. 2025)</p>
+            <p>Invited Seminar &mdash; POSCO Labs, Jul. 2025</p>
           </div>
         </li>
         <li>
-          <time>2024 — 2025</time>
+          <time>2024&ndash;25</time>
           <div>
             <h4>Uncertainty Estimation by Density&#8209;Aware Evidential Deep Learning</h4>
-            <p>KIIE Annual Spring Conference, Jeju (Jun. 2025) · Qualcomm Innovation Fellowship Korea Finalist Presentation (Dec. 2024) · Samsung AI Forum, Invited Poster Showcase (Oct. 2024) · ICML 2024 Poster Session, Vienna (Jul. 2024)</p>
+            <p>KIIE Annual Spring Conference, Jeju (Jun. 2025) &ensp;&middot;&ensp; Qualcomm Innovation Fellowship Korea Finalist (Dec. 2024) &ensp;&middot;&ensp; Samsung AI Forum Invited Poster (Oct. 2024) &ensp;&middot;&ensp; ICML 2024 Poster Session, Vienna (Jul. 2024)</p>
           </div>
         </li>
         <li>
           <time>2023</time>
           <div>
             <h4>Out&#8209;of&#8209;Distribution Detection Using Dirichlet&#8209;Based Uncertainty Methods</h4>
-            <p>KIIE Annual Fall Conference, Ulsan (Nov. 2023)</p>
+            <p>KIIE Annual Fall Conference, Ulsan, Nov. 2023</p>
           </div>
         </li>
       </ul>
     </section>
 
-    <!-- ============== CV (Service / Awards / Experience / Teaching) ============== -->
+    <!-- CV -->
     <section id="cv" class="block">
-      <h2 class="block-title">curriculum vitae</h2>
-      <p class="block-sub">A condensed version. <a href="https://www.overleaf.com/read/jbgbnhqspqhc#0cef22">View full CV →</a></p>
-
-      <div class="cv-row">
-        <h3 class="cv-row-title">Education</h3>
-        <ul class="plain-list">
-          <li><time>2022 — 2028</time> <span><strong>Ph.D. Candidate</strong>, Industrial &amp; Systems Engineering, KAIST <span class="muted-inline">&mdash; Advisor: Prof. Heeyoung Kim</span></span></li>
-          <li><time>2018 — 2022</time> <span><strong>B.S.</strong>, Industrial &amp; Systems Engineering, KAIST</span></li>
-        </ul>
+      <div class="section-header">
+        <h2 class="block-title">CV</h2>
+        <span class="section-meta"><a href="https://www.overleaf.com/read/jbgbnhqspqhc#0cef22">View full CV &rarr;</a></span>
       </div>
 
-      <div class="cv-row">
-        <h3 class="cv-row-title">Honors &amp; Awards</h3>
-        <ul class="plain-list">
-          <li><time>2026</time> <span><strong>Gold Reviewer</strong>, International Conference on Machine Learning (ICML 2026)</span></li>
-          <li><time>2025</time> <span><strong>Next&#8209;Generation Engineering Researcher</strong>, Institute for the Promotion of Science and Engineering in Korea (IPSEK)</span></li>
-          <li><time>2024</time> <span><strong>Best Poster Award (3rd Prize)</strong>, Samsung AI Forum (SAIF 2024)</span></li>
-          <li><time>2024</time> <span><strong>Finalist</strong>, Qualcomm Innovation Fellowship Korea (QIFK 2024)</span></li>
-          <li><time>2020</time> <span><strong>Dean's List</strong>, Department of Industrial &amp; Systems Engineering, KAIST</span></li>
-        </ul>
-      </div>
-
-      <div class="cv-row">
-        <h3 class="cv-row-title">Academic Service</h3>
-        <ul class="plain-list">
-          <li><time>Conference</time> <span>Reviewer &mdash; ICML 2026 (<strong>Gold Reviewer</strong>); NeurIPS 2025, 2026</span></li>
-          <li><time>Journal</time> <span>Reviewer &mdash; TMLR (2026&ndash;present) · IISE Transactions · Computers &amp; Industrial Engineering · Medical Image Analysis</span></li>
-        </ul>
-      </div>
-
-      <div class="cv-row">
-        <h3 class="cv-row-title">Research &amp; Industry Experience</h3>
-        <ul class="plain-list experience-list">
+      <div class="cv-group">
+        <h3 class="cv-group-title">Education</h3>
+        <ul class="cv-list">
           <li>
-            <time>2023.07 — 08</time>
+            <time>2022 &mdash; 2028</time>
+            <span><strong>Ph.D. Candidate</strong>, Industrial &amp; Systems Engineering, KAIST
+              <span class="dim"> &mdash; Advisor: Prof. Heeyoung Kim</span></span>
+          </li>
+          <li>
+            <time>2018 &mdash; 2022</time>
+            <span><strong>B.S.</strong>, Industrial &amp; Systems Engineering, KAIST</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cv-group">
+        <h3 class="cv-group-title">Honors &amp; Awards</h3>
+        <ul class="cv-list">
+          <li><time>2026</time><span><strong>Gold Reviewer</strong>, ICML 2026</span></li>
+          <li><time>2025</time><span><strong>Next&#8209;Generation Engineering Researcher</strong>, IPSEK</span></li>
+          <li><time>2024</time><span><strong>Best Poster Award (3rd Prize)</strong>, Samsung AI Forum</span></li>
+          <li><time>2024</time><span><strong>Finalist</strong>, Qualcomm Innovation Fellowship Korea</span></li>
+          <li><time>2020</time><span><strong>Dean's List</strong>, Dept. of Industrial &amp; Systems Engineering, KAIST</span></li>
+        </ul>
+      </div>
+
+      <div class="cv-group">
+        <h3 class="cv-group-title">Academic Service</h3>
+        <ul class="cv-list">
+          <li>
+            <time>Conference</time>
+            <span>Reviewer &mdash; ICML 2026 (<strong>Gold Reviewer</strong>); NeurIPS 2025, 2026</span>
+          </li>
+          <li>
+            <time>Journal</time>
+            <span>Reviewer &mdash; TMLR (2026&ndash;present) &ensp;&middot;&ensp; IISE Transactions &ensp;&middot;&ensp; Computers &amp; Industrial Engineering &ensp;&middot;&ensp; Medical Image Analysis</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cv-group">
+        <h3 class="cv-group-title">Research &amp; Industry Experience</h3>
+        <ul class="cv-list exp">
+          <li>
+            <time>2023.07&ndash;08</time>
             <span>
               <strong>Research Intern</strong>, Samsung Advanced Institute of Technology (SAIT)
-              <span class="muted-inline"> &mdash; Machine Learning Lab, AI Research Center</span>
-              <br /><span class="small-note">Developed uncertainty-aware anomaly detection methods for semiconductor quality inspection.</span>
+              <span class="dim"> &mdash; ML Lab, AI Research Center</span>
+              <span class="cv-note">Uncertainty-aware anomaly detection for semiconductor quality inspection.</span>
             </span>
           </li>
           <li>
-            <time>2021.07 — 08</time>
+            <time>2021.07&ndash;08</time>
             <span>
               <strong>Undergraduate Research Intern</strong>, Industrial Statistics Lab, KAIST
-              <br /><span class="small-note">Studied Bayesian nonparametric modeling, with a focus on Dirichlet process Gaussian mixture models.</span>
+              <span class="cv-note">Bayesian nonparametric modeling &mdash; Dirichlet process Gaussian mixture models.</span>
             </span>
           </li>
           <li>
-            <time>2021.01 — 02</time>
+            <time>2021.01&ndash;02</time>
             <span>
               <strong>Intern</strong>, SK Hynix
-              <span class="muted-inline"> &mdash; QA Team, Mobile DRAM Engineering</span>
-              <br /><span class="small-note">Analyzed bank-address patterns in mobile DRAM quality data for fault detection and defect analysis.</span>
+              <span class="dim"> &mdash; QA Team, Mobile DRAM Engineering</span>
+              <span class="cv-note">Bank-address pattern analysis for fault detection in mobile DRAM quality data.</span>
             </span>
           </li>
         </ul>
       </div>
 
-      <div class="cv-row">
-        <h3 class="cv-row-title">Teaching &amp; Leadership</h3>
-        <ul class="plain-list">
-          <li><time>2025 — Now</time> <span><strong>Lab Representative</strong> &mdash; Engineering Data Science Lab, KAIST</span></li>
-          <li><time>2025 Spring</time> <span><strong>Teaching Assistant</strong> &mdash; Engineering Statistics I (IE241), KAIST</span></li>
-          <li><time>2023 — 2025</time> <span><strong>Academic Tutor</strong> &mdash; Engineering Statistics I &amp; II (IE241 / IE242), KAIST</span></li>
+      <div class="cv-group">
+        <h3 class="cv-group-title">Teaching &amp; Leadership</h3>
+        <ul class="cv-list">
+          <li><time>2025&ndash;Now</time><span><strong>Lab Representative</strong> &mdash; Engineering Data Science Lab, KAIST</span></li>
+          <li><time>2025 Spring</time><span><strong>Teaching Assistant</strong> &mdash; Engineering Statistics I (IE241), KAIST</span></li>
+          <li><time>2023&ndash;2025</time><span><strong>Academic Tutor</strong> &mdash; Engineering Statistics I &amp; II (IE241/IE242), KAIST</span></li>
         </ul>
       </div>
 
-      <div class="cv-row">
-        <h3 class="cv-row-title">Skills</h3>
-        <ul class="plain-list skills-list">
-          <li><time>Research</time> <span>Probabilistic Machine Learning · Deep Learning · Bayesian Statistics · Uncertainty Quantification · Time&#8209;Series Analysis</span></li>
-          <li><time>Tools</time> <span><code>Python</code> · <code>PyTorch</code> · <code>NumPy</code> · <code>SciPy</code> · <code>Scikit&#8209;learn</code> · <code>R</code> · <code>LaTeX</code> · <code>Git</code></span></li>
-          <li><time>Languages</time> <span>Korean (Native) · English (Fluent; TOEIC 895)</span></li>
+      <div class="cv-group">
+        <h3 class="cv-group-title">Skills</h3>
+        <ul class="cv-list">
+          <li>
+            <time>Research</time>
+            <span>Probabilistic ML &ensp;&middot;&ensp; Deep Learning &ensp;&middot;&ensp; Bayesian Statistics &ensp;&middot;&ensp; Uncertainty Quantification &ensp;&middot;&ensp; Time&#8209;Series Analysis</span>
+          </li>
+          <li>
+            <time>Tools</time>
+            <span><code>Python</code> <code>PyTorch</code> <code>NumPy</code> <code>SciPy</code> <code>scikit-learn</code> <code>R</code> <code>LaTeX</code> <code>Git</code></span>
+          </li>
+          <li>
+            <time>Languages</time>
+            <span>Korean (Native) &ensp;&middot;&ensp; English (Fluent; TOEIC 895)</span>
+          </li>
         </ul>
       </div>
     </section>
@@ -492,49 +506,39 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <p>
-        © 2026 Taeseong Yoon &nbsp;·&nbsp;
-        Built with <span class="heart" aria-hidden="true">❤</span> in Daejeon &nbsp;·&nbsp;
-        Hosted on GitHub Pages.
-      </p>
-      <p class="muted">Last updated: <time>Jun 2026</time></p>
+      <p>&copy; 2026 Taeseong Yoon &ensp;&middot;&ensp; Daejeon, Korea</p>
+      <p>Last updated <time>Jun 2026</time></p>
     </div>
   </footer>
 
   <script>
-    // Mobile nav
     const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
+    const links  = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
       toggle.classList.toggle('is-open', open);
     });
-    links.querySelectorAll('a').forEach((a) =>
+    links.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', () => {
         links.classList.remove('open');
         toggle.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
       })
     );
-
-    // Active section highlighting
-    const sections = document.querySelectorAll('main section[id]');
+    const sections   = document.querySelectorAll('main section[id]');
     const navAnchors = document.querySelectorAll('.nav-links a');
-    const spy = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const id = e.target.id;
-            navAnchors.forEach((a) =>
-              a.classList.toggle('active', a.getAttribute('href') === `#${id}`)
-            );
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-    sections.forEach((s) => spy.observe(s));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          navAnchors.forEach(a =>
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id)
+          );
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(s => obs.observe(s));
   </script>
 </body>
 </html>
