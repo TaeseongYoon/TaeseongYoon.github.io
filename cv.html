@@ -48,8 +48,8 @@
 
 <section class="cv-section" id="summary">
 <h2>Research summary</h2>
-<p class="cv-prose">My research primarily focuses on <strong>uncertainty quantification (UQ) for deep learning</strong>. I develop scalable, theoretically grounded frameworks to ensure reliable and trustworthy predictions, with a core emphasis on evidential deep learning, efficient Bayesian inference, out-of-distribution detection, and model robustness under distribution shifts.</p>
-<p class="cv-prose">Beyond foundational UQ, my broader research interests encompass <strong>statistical machine learning for complex structured and industrial data</strong>, where I advance methodologies for multivariate time series anomaly detection, learning under incomplete and imbalanced data, causal inference, and tabular foundation models.</p>
+<p class="cv-prose">My research develops <strong>uncertainty quantification (UQ) for deep learning</strong> that is both efficient and faithful: methods that quantify epistemic uncertainty in a single forward pass while ensuring that the quantified uncertainty genuinely reflects what the model does not know. My work builds on evidential deep learning and efficient Bayesian inference, treating second-order (Dirichlet-based) uncertainty as a Bayesian object and asking what it can and cannot represent. Along this line, I have introduced density-aware (ICML 2024) and flexible (NeurIPS 2025) formulations of second-order uncertainty, an interpretable mixture-of-Dirichlet framework (ICML 2026), and a hierarchical Bayesian approach that separates prediction from epistemic-uncertainty inference. My current work extends this agenda to <strong>post-hoc UQ for pretrained and foundation models</strong>, and more broadly to UQ for agentic AI systems, where uncertainty must be propagated through multi-step reasoning and tool use. I am also interested in conformal prediction and tabular foundation models as complementary routes to reliable prediction.</p>
+<p class="cv-prose">The same concern—reliable learning when data are incomplete, imbalanced, or confounded—drives my work on <strong>structured and industrial data</strong>: multivariate time-series anomaly detection for multi-stage manufacturing processes (IEEE TASE, CIKM 2026), class-imbalanced semi-supervised learning, and variable selection for continuous treatment effect estimation.</p>
 </section>
 
 <section class="cv-section" id="education">
@@ -92,13 +92,13 @@
 <div class="pub-title">Uncertainty Estimation by Flexible Evidential Deep Learning</div>
 <div class="pub-authors"><strong>Taeseong Yoon</strong>, Heeyoung Kim</div>
 <div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS 2025)</div>
-<div class="links"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/abf0ea3ae33d1a931483e327ff8d94f8-Abstract-Conference.html">Paper</a><a href="https://github.com/TaeseongYoon/F-EDL">Code</a></div>
+<div class="links"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/abf0ea3ae33d1a931483e327ff8d94f8-Abstract-Conference.html">Proceedings</a><a href="https://arxiv.org/abs/2510.18322">arXiv</a><a href="https://github.com/TaeseongYoon/F-EDL">Code</a></div>
 </div></li>
 <li><div>
 <div class="pub-title">Uncertainty Estimation by Density-Aware Evidential Deep Learning</div>
 <div class="pub-authors"><strong>Taeseong Yoon</strong>, Heeyoung Kim</div>
 <div class="pub-venue">International Conference on Machine Learning (ICML 2024), PMLR 235</div>
-<div class="links"><a href="https://proceedings.mlr.press/v235/yoon24a.html">Paper</a><a href="https://github.com/TaeseongYoon/DAEDL">Code</a></div>
+<div class="links"><a href="https://proceedings.mlr.press/v235/yoon24a.html">PMLR</a><a href="https://arxiv.org/abs/2409.08754">arXiv</a><a href="https://github.com/TaeseongYoon/DAEDL">Code</a></div>
 </div></li>
 </ol>
 <h3>Manuscripts under review</h3>
@@ -110,22 +110,14 @@
 <div class="links"><a href="https://openreview.net/forum?id=2tj7pEeVNZ">OpenReview</a></div>
 </div></li>
 <li><div>
-<div class="pub-title">LALA: Learning-Aware Logit Adjustment for Class-Imbalanced Semi-Supervised Learning</div>
-<div class="pub-authors">Taemin Park, <strong>Taeseong Yoon</strong>, Heeyoung Kim</div>
-<div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS 2026), under review</div>
-</div></li>
-</ol>
-<h3>Ongoing research</h3>
-<ol class="pub-list" style="counter-reset: pub 7">
-<li><div>
 <div class="pub-title">Strong Views for Representation, Weak Views for Classification: Rethinking Augmentation in Class-Imbalanced Semi-Supervised Learning</div>
 <div class="pub-authors">Taemin Park, <strong>Taeseong Yoon</strong>, Heeyoung Kim</div>
-<div class="pub-venue">In preparation; to be submitted to ICLR 2027</div>
+<div class="pub-venue">International Conference on Learning Representations (ICLR 2027), under review</div>
 </div></li>
 <li><div>
 <div class="pub-title">Causal Role-Aware Variable Selection for Continuous Treatment Effect Estimation</div>
 <div class="pub-authors">Hyunsoo Cho*, <strong>Taeseong Yoon*</strong>, Insoo Jeong*, Heeyoung Kim</div>
-<div class="pub-venue">In preparation; to be submitted to AISTATS 2027</div>
+<div class="pub-venue">International Conference on Artificial Intelligence and Statistics (AISTATS 2027), under review</div>
 </div></li>
 </ol>
 </section>
